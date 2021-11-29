@@ -16,7 +16,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-10-28T00:00:00-05:00" />
 <script type="application/ld+json">
-{"datePublished":"2021-10-28T00:00:00-05:00","url":"https://alyferg.github.io/data-science-adventures/2021/10/28/Resources.html","@type":"BlogPosting","headline":"Resources","dateModified":"2021-10-28T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://alyferg.github.io/data-science-adventures/2021/10/28/Resources.html"},"description":"From an absolute Zero towards Hero or perhaps Nero.","@context":"https://schema.org"}</script>
+{"url":"https://alyferg.github.io/data-science-adventures/2021/10/28/Resources.html","@type":"BlogPosting","headline":"Resources","dateModified":"2021-10-28T00:00:00-05:00","datePublished":"2021-10-28T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://alyferg.github.io/data-science-adventures/2021/10/28/Resources.html"},"description":"From an absolute Zero towards Hero or perhaps Nero.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/data-science-adventures/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://alyferg.github.io/data-science-adventures/feed.xml" title="My Adventures in Data Science" /><link rel="shortcut icon" type="image/x-icon" href="/data-science-adventures/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -63,7 +63,7 @@ window.onload = wrap_img;
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/data-science-adventures/about/">About Me</a><a class="page-link" href="/data-science-adventures/search/">Search</a><a class="page-link" href="/data-science-adventures/categories/">Tags</a></div>
+        <div class="trigger"><a class="page-link" href="/data-science-adventures/2020-01-14-test-markdown-post.html">An Example Markdown Post</a><a class="page-link" href="/data-science-adventures/about/">About Me</a><a class="page-link" href="/data-science-adventures/search/">Search</a><a class="page-link" href="/data-science-adventures/categories/">Tags</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -77,7 +77,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      4 min read
+      5 min read
     
 </span></p>
 
@@ -192,7 +192,8 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># load dependencies and data</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
@@ -398,7 +399,8 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#this gives us the average wait time for each mode</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#we will be grouping the Terminal Time column by mode and calculating an average  </span>
+<span class="c1">#this gives us the average wait time for each mode</span>
 
 <span class="n">air</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;mode&#39;</span><span class="p">)[</span><span class="s1">&#39;ttme&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 
@@ -441,7 +443,10 @@ Name: ttme, dtype: float64</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Plane - 61&#39;</span><span class="p">,</span><span class="s1">&#39;Train - 35&#39;</span><span class="p">,</span><span class="s1">&#39;Bus - 41&#39;</span><span class="p">,</span> <span class="s1">&#39;Car - 0&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># add labels to data</span>
+
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Plane - 61&#39;</span><span class="p">,</span><span class="s1">&#39;Train - 35&#39;</span><span class="p">,</span><span class="s1">&#39;Bus - 41&#39;</span><span class="p">,</span> <span class="s1">&#39;Car - 0&#39;</span><span class="p">]</span>
+
 <span class="c1"># plot the pie chart</span>
 
 <span class="n">plot</span> <span class="o">=</span> <span class="n">air</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">labeldistance</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">autopct</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%1.1f%%</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
