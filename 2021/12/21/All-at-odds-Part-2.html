@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>All at odds - Part 2 | My Adventures in Data Science</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="All at odds - Part 2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="From an absolute Zero towards Hero or perhaps Nero." />
+<meta property="og:description" content="From an absolute Zero towards Hero or perhaps Nero." />
+<link rel="canonical" href="https://alyferg.github.io/data-science-adventures/2021/12/21/All-at-odds-Part-2.html" />
+<meta property="og:url" content="https://alyferg.github.io/data-science-adventures/2021/12/21/All-at-odds-Part-2.html" />
+<meta property="og:site_name" content="My Adventures in Data Science" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-12-21T00:00:00-06:00" />
+<script type="application/ld+json">
+{"url":"https://alyferg.github.io/data-science-adventures/2021/12/21/All-at-odds-Part-2.html","@type":"BlogPosting","headline":"All at odds - Part 2","dateModified":"2021-12-21T00:00:00-06:00","datePublished":"2021-12-21T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://alyferg.github.io/data-science-adventures/2021/12/21/All-at-odds-Part-2.html"},"description":"From an absolute Zero towards Hero or perhaps Nero.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/data-science-adventures/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://alyferg.github.io/data-science-adventures/feed.xml" title="My Adventures in Data Science" /><link rel="shortcut icon" type="image/x-icon" href="/data-science-adventures/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/data-science-adventures/">My Adventures in Data Science</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/data-science-adventures/2020-01-14-test-markdown-post.html">An Example Markdown Post</a><a class="page-link" href="/data-science-adventures/about/">About Me</a><a class="page-link" href="/data-science-adventures/search/">Search</a><a class="page-link" href="/data-science-adventures/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">All at odds - Part 2</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-12-21T00:00:00-06:00" itemprop="datePublished">
+        Dec 21, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      12 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+
+    <a href="https://github.com/alyferg/data-science-adventures/tree/master/_notebooks/2021-12-21-All at odds - Part 2.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/data-science-adventures/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/alyferg/data-science-adventures/master?filepath=_notebooks%2F2021-12-21-All+at+odds+-+Part+2.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/data-science-adventures/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/alyferg/data-science-adventures/blob/master/_notebooks/2021-12-21-All at odds - Part 2.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/data-science-adventures/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2021-12-21-All at odds - Part 2.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In the last post, we analysed the starting odds for games that ended as Home wins, Away wins, and Draws. We noticed something in the charts that required further investigation. When we looked at the starting odds for games that ended as a Home win the starting odds for the game, in the vast majority of cases, had the Home win odds shorter (lower) than Away win and Draw odds. In other words, it looked as if the market was very good at predicting Home wins. Similar analysis of Away wins and Draws did not yield matching results. Now, we need to investigate that finding further.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's have a quick recap of the findings from the last time, so we can reference it here. Without explaining in detail, here is the code we used to produce the Boxplot for Home wins. For a detailed explanation then you can reference Part 1 of this series.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># from Part 1 of this series</span>
+<span class="c1"># load dependencies and data</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">from</span> <span class="nn">pandas.plotting</span> <span class="kn">import</span> <span class="n">scatter_matrix</span>
+
+<span class="c1">#load all csv files and append to a single dataframe</span>
+<span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;../../../GitHub/England-EPL&#39;</span> 
+<span class="n">all_files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">path</span> <span class="o">+</span> <span class="s2">&quot;/*.csv&quot;</span><span class="p">)</span>
+
+<span class="n">li</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">all_files</span><span class="p">:</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">li</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="n">footdata</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">li</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">footdata</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;B365H&#39;</span><span class="p">:</span> <span class="s1">&#39;Home odds&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;B365A&#39;</span><span class="p">:</span> <span class="s1">&#39;Away odds&#39;</span><span class="p">,</span>
+                              <span class="s1">&#39;B365D&#39;</span><span class="p">:</span> <span class="s1">&#39;Draw odds&#39;</span><span class="p">},</span>
+                     <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;raise&#39;</span><span class="p">)</span>
+
+<span class="c1"># to make the dataframe more manageable and readable let&#39;s select only the columns we want to analyse</span>
+
+<span class="n">footdata_odds</span> <span class="o">=</span> <span class="n">footdata</span><span class="p">[[</span><span class="s1">&#39;FTR&#39;</span><span class="p">,</span><span class="s1">&#39;Home odds&#39;</span><span class="p">,</span><span class="s1">&#39;Away odds&#39;</span><span class="p">,</span><span class="s1">&#39;Draw odds&#39;</span><span class="p">]]</span>
+
+<span class="c1">#create a table with a subset of the data for Home win, Away win and Draw</span>
+<span class="n">footdata_odds_h</span> <span class="o">=</span> <span class="n">footdata_odds</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">footdata_odds</span><span class="p">[</span><span class="s1">&#39;FTR&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;H&quot;</span><span class="p">]</span>
+<span class="n">footdata_odds_a</span> <span class="o">=</span> <span class="n">footdata_odds</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">footdata_odds</span><span class="p">[</span><span class="s1">&#39;FTR&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;A&quot;</span><span class="p">]</span>
+<span class="n">footdata_odds_d</span> <span class="o">=</span> <span class="n">footdata_odds</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">footdata_odds</span><span class="p">[</span><span class="s1">&#39;FTR&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;D&quot;</span><span class="p">]</span>
+<span class="c1">#plot the boxplot for games that ended a home win. Nice and big, so we can get a good look at the data.</span>
+<span class="n">footdata_odds_h</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;box&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">15</span><span class="p">),</span><span class="n">title</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Starting odds for home wins&#39;</span><span class="p">),</span><span class="n">grid</span><span class="o">=</span><span class="s1">&#39;TRUE&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;AxesSubplot:title={&#39;center&#39;:&#39;Starting odds for home wins&#39;}&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+" />
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The vast majority of games show that the starting odds of the Home win are less than the starting odds for Away win and Draw. As a general rule, the odds for the Draw tend to be higher than at least one, if not both of the other odds. More about this later.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We need to add a word of caution at this point. What we are seeing is the starting odds for matches that ended as a Home win. Of course, at the start of the game, we don't know the outcome. So the question that we need to answer is "what is the probability of a Home win when the Home win odds are less than Away odds or Draw odds"</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The ideal tool for answering the question "What is the probability of X given Y" is Bayes Theorem. That is exactly what Bayes does and it will help us here to very easily decide if there is a direct link between the outcome given the odds at the start. I also have to acknowledge the wonderful work of reference Think Bayes by Allen B. Downey was in helping me to understand the concept and answer this question. Anyone who has read the book may see some familiar code used here.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We have already loaded the data we are to use, let's have a quick look at the main table. Then we will drop data columns with the exception of the result and starting odds columns.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">footdata</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Div</th>
+      <th>Date</th>
+      <th>HomeTeam</th>
+      <th>AwayTeam</th>
+      <th>FTHG</th>
+      <th>FTAG</th>
+      <th>FTR</th>
+      <th>HTHG</th>
+      <th>HTAG</th>
+      <th>HTR</th>
+      <th>...</th>
+      <th>AvgC&lt;2.5</th>
+      <th>AHCh</th>
+      <th>B365CAHH</th>
+      <th>B365CAHA</th>
+      <th>PCAHH</th>
+      <th>PCAHA</th>
+      <th>MaxCAHH</th>
+      <th>MaxCAHA</th>
+      <th>AvgCAHH</th>
+      <th>AvgCAHA</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>E0</td>
+      <td>14/08/10</td>
+      <td>Aston Villa</td>
+      <td>West Ham</td>
+      <td>3.0</td>
+      <td>0.0</td>
+      <td>H</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>H</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>E0</td>
+      <td>14/08/10</td>
+      <td>Blackburn</td>
+      <td>Everton</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>H</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>H</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>E0</td>
+      <td>14/08/10</td>
+      <td>Bolton</td>
+      <td>Fulham</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>D</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>D</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>E0</td>
+      <td>14/08/10</td>
+      <td>Chelsea</td>
+      <td>West Brom</td>
+      <td>6.0</td>
+      <td>0.0</td>
+      <td>H</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>H</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>E0</td>
+      <td>14/08/10</td>
+      <td>Sunderland</td>
+      <td>Birmingham</td>
+      <td>2.0</td>
+      <td>2.0</td>
+      <td>D</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>H</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>4418</th>
+      <td>E0</td>
+      <td>23/05/2021</td>
+      <td>Liverpool</td>
+      <td>Crystal Palace</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>H</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>H</td>
+      <td>...</td>
+      <td>3.49</td>
+      <td>-2.25</td>
+      <td>1.86</td>
+      <td>2.04</td>
+      <td>1.88</td>
+      <td>2.03</td>
+      <td>1.98</td>
+      <td>2.14</td>
+      <td>1.88</td>
+      <td>2.00</td>
+    </tr>
+    <tr>
+      <th>4419</th>
+      <td>E0</td>
+      <td>23/05/2021</td>
+      <td>Man City</td>
+      <td>Everton</td>
+      <td>5.0</td>
+      <td>0.0</td>
+      <td>H</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>H</td>
+      <td>...</td>
+      <td>2.77</td>
+      <td>-1.75</td>
+      <td>2.01</td>
+      <td>1.89</td>
+      <td>1.99</td>
+      <td>1.89</td>
+      <td>2.20</td>
+      <td>2.00</td>
+      <td>2.03</td>
+      <td>1.85</td>
+    </tr>
+    <tr>
+      <th>4420</th>
+      <td>E0</td>
+      <td>23/05/2021</td>
+      <td>Sheffield United</td>
+      <td>Burnley</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>H</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>H</td>
+      <td>...</td>
+      <td>2.05</td>
+      <td>0.00</td>
+      <td>2.04</td>
+      <td>1.86</td>
+      <td>2.05</td>
+      <td>1.86</td>
+      <td>2.17</td>
+      <td>1.90</td>
+      <td>2.03</td>
+      <td>1.84</td>
+    </tr>
+    <tr>
+      <th>4421</th>
+      <td>E0</td>
+      <td>23/05/2021</td>
+      <td>West Ham</td>
+      <td>Southampton</td>
+      <td>3.0</td>
+      <td>0.0</td>
+      <td>H</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>H</td>
+      <td>...</td>
+      <td>2.14</td>
+      <td>-0.75</td>
+      <td>2.00</td>
+      <td>1.90</td>
+      <td>2.02</td>
+      <td>1.91</td>
+      <td>2.06</td>
+      <td>2.01</td>
+      <td>1.99</td>
+      <td>1.89</td>
+    </tr>
+    <tr>
+      <th>4422</th>
+      <td>E0</td>
+      <td>23/05/2021</td>
+      <td>Wolves</td>
+      <td>Man United</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>A</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>A</td>
+      <td>...</td>
+      <td>1.62</td>
+      <td>-0.25</td>
+      <td>2.04</td>
+      <td>1.86</td>
+      <td>2.10</td>
+      <td>1.84</td>
+      <td>2.10</td>
+      <td>1.94</td>
+      <td>2.00</td>
+      <td>1.88</td>
+    </tr>
+  </tbody>
+</table>
+<p>4423 rows × 139 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># to make the dataframe more manageable and readable let&#39;s select only the columns we want to analyse</span>
+
+<span class="n">footdata_odds</span> <span class="o">=</span> <span class="n">footdata</span><span class="p">[[</span><span class="s1">&#39;FTR&#39;</span><span class="p">,</span><span class="s1">&#39;Home odds&#39;</span><span class="p">,</span><span class="s1">&#39;Away odds&#39;</span><span class="p">,</span><span class="s1">&#39;Draw odds&#39;</span><span class="p">]]</span>
+
+<span class="n">footdata_odds</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>FTR</th>
+      <th>Home odds</th>
+      <th>Away odds</th>
+      <th>Draw odds</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>H</td>
+      <td>2.00</td>
+      <td>4.0</td>
+      <td>3.30</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>H</td>
+      <td>2.88</td>
+      <td>2.5</td>
+      <td>3.25</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>D</td>
+      <td>2.20</td>
+      <td>3.4</td>
+      <td>3.30</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>H</td>
+      <td>1.17</td>
+      <td>17.0</td>
+      <td>7.00</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>D</td>
+      <td>2.10</td>
+      <td>3.6</td>
+      <td>3.30</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>4418</th>
+      <td>H</td>
+      <td>1.14</td>
+      <td>15.0</td>
+      <td>8.50</td>
+    </tr>
+    <tr>
+      <th>4419</th>
+      <td>H</td>
+      <td>1.44</td>
+      <td>6.5</td>
+      <td>5.00</td>
+    </tr>
+    <tr>
+      <th>4420</th>
+      <td>H</td>
+      <td>2.80</td>
+      <td>2.4</td>
+      <td>3.60</td>
+    </tr>
+    <tr>
+      <th>4421</th>
+      <td>H</td>
+      <td>1.65</td>
+      <td>5.0</td>
+      <td>4.00</td>
+    </tr>
+    <tr>
+      <th>4422</th>
+      <td>A</td>
+      <td>2.50</td>
+      <td>2.7</td>
+      <td>3.50</td>
+    </tr>
+  </tbody>
+</table>
+<p>4423 rows × 4 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The following code creates 2 functions to call as we prepare to analyse the probabilities. The first allows us to calculate the probability of a particular outcome occurring while the second gives us a conditional probability. It is the latter we wish to know but to get there we need to extract the right data.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">prob</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Computes the probability of a proposition, A.&quot;&quot;&quot;</span>    
+    <span class="k">return</span> <span class="n">A</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">conditional</span><span class="p">(</span><span class="n">proposition</span><span class="p">,</span> <span class="n">given</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Probability of A conditioned on given.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">prob</span><span class="p">(</span><span class="n">proposition</span><span class="p">[</span><span class="n">given</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Next, we prepare to make our comparisons. We will create three tables 'home', 'away', and 'draw'. Each of these will contain 4422 rows and a Boolean representing Home wins, Away wins, and Draws. Using Pandas to create these tables, each stores the Boolean as 0 for FALSE and 1 for TRUE. This then enables us to 'sum' the total True values in each. We can also use the 'mean' function to calculate the number of TRUE entries as a proportion of the total i.e. the probability of a particular outcome is the series.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">home</span> <span class="o">=</span> <span class="p">(</span><span class="n">footdata</span><span class="p">[</span><span class="s1">&#39;FTR&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;H&#39;</span><span class="p">)</span>
+<span class="n">home</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0     True
+1     True
+2    False
+3     True
+4    False
+Name: FTR, dtype: bool</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">away</span> <span class="o">=</span> <span class="p">(</span><span class="n">footdata</span><span class="p">[</span><span class="s1">&#39;FTR&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;A&#39;</span><span class="p">)</span>
+<span class="n">away</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0    False
+1    False
+2    False
+3    False
+4    False
+Name: FTR, dtype: bool</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">draw</span> <span class="o">=</span> <span class="p">(</span><span class="n">footdata</span><span class="p">[</span><span class="s1">&#39;FTR&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;D&#39;</span><span class="p">)</span>
+<span class="n">draw</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0    False
+1    False
+2     True
+3    False
+4     True
+Name: FTR, dtype: bool</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">home</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">away</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="p">,</span><span class="n">draw</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(1967, 1359, 1096)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">home</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">away</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="p">,</span> <span class="n">draw</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(0.44472077775265656, 0.3072575175220439, 0.24779561383676238)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now if we run these tables through our function 'prob' created earlier, then we can see the probability of the outcome. These are probabilities, i.e. between 0 and 1. So for Home wins 0.44472077775265656 equates to approx 44.5% of all matches ending as a Home win. Similarly, 30.7% Away wins and 24.8% draws. We know from these figures compared to the 'sum' and 'mean' functions above that the 'prob' function works.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">prob</span><span class="p">(</span><span class="n">home</span><span class="p">),</span> <span class="n">prob</span><span class="p">(</span><span class="n">away</span><span class="p">),</span> <span class="n">prob</span><span class="p">(</span><span class="n">draw</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(0.44472077775265656, 0.3072575175220439, 0.24779561383676238)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Similarly, we now create tables for odds where Home odds are lower than Away odds or vice versa. Here, we are ignoring the odds for the Draw. Simply put the odds for the Draw are never lower than those for a result either at home or away. Creating a table for situations where Draw odds were lower would only result in an empty table. This reflects the difficulty in predicting draws in football.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">lower_odds</span> <span class="o">=</span> <span class="p">(</span><span class="n">footdata</span><span class="p">[</span><span class="s1">&#39;Home odds&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">footdata</span><span class="p">[</span><span class="s1">&#39;Away odds&#39;</span><span class="p">]))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">footdata</span><span class="p">[</span><span class="s1">&#39;Home odds&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">footdata</span><span class="p">[</span><span class="s1">&#39;Draw odds&#39;</span><span class="p">]))</span>
+<span class="n">lower_odds</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>3049</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">higher_odds</span> <span class="o">=</span> <span class="p">(</span><span class="n">footdata</span><span class="p">[</span><span class="s1">&#39;Away odds&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">footdata</span><span class="p">[</span><span class="s1">&#39;Home odds&#39;</span><span class="p">]))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">footdata</span><span class="p">[</span><span class="s1">&#39;Away odds&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">footdata</span><span class="p">[</span><span class="s1">&#39;Draw odds&#39;</span><span class="p">]))</span>
+<span class="n">higher_odds</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1347</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">prob</span><span class="p">(</span><span class="n">lower_odds</span><span class="p">),</span> <span class="n">prob</span><span class="p">(</span><span class="n">higher_odds</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(0.6893511191498982, 0.30454442685959754)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>At last, we are all ready to go. We see from the above that around 70% of the time Home win odds are lower than away win odds, which you would expect to be the case. Exciting, at last, we can find the answer to our question "what is the probability of a Home win when the Home win odds are less than Away odds or Draw odds"</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">conditional</span><span class="p">(</span><span class="n">home</span><span class="p">,</span> <span class="n">given</span><span class="o">=</span><span class="n">lower_odds</span><span class="p">)</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.5388652017054772</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I have to be honest and say that was rather an anticlimax. Where the Home win odds are below the odds for an Away win, the outcome is a home win only 53.8% of the time. This seems really low given the chart we saw at the start. It looked like odds for Home wins were always below the others, so what happened?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The outcome can be explained with the following two main reasons.</p>
+<ol>
+<li><p>The impact of the Draw. We know that 24.7% of games end as a draw, but that the odds of a Draw are always above those of Home and Away wins. Therefore, the best outcome for Home wins where Home win odds are lower is around 75% of games as around 25% will end up as Draws.</p>
+</li>
+<li><p>The other 21% of games? Well, that's just the nature of football. Players, teams, referees have an off day. Balls hitting the woodwork and not going into the goal, deflections of shots past a goalkeeper, etc etc etc. That's the randomness of football.</p>
+</li>
+</ol>
+<p>If we were to disregard the draw, then we would be 78% accurate, but the draw is part of the game.</p>
+<p>Let's just check the figures for matches where the outcome is a Draw and see how that compares to the starting odds.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">conditional</span><span class="p">(</span><span class="n">draw</span><span class="p">,</span> <span class="n">higher_odds</span><span class="p">),</span> <span class="n">conditional</span><span class="p">(</span><span class="n">draw</span><span class="p">,</span> <span class="n">lower_odds</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(0.2457312546399406, 0.24762217120367333)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>That's why football is such an exciting game. Whether odds for a Home win or an Away win are higher, the draw ratio is always around 24.6/24.7% almost the same. These figures are based on a sample size of 4423 games. As that number increases the figures would tend to merge.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Of course in our analysis, we have treated every team the same. We have not looked at strong teams against weak teams. We wanted to see the outcomes based purely on the starting odds. Nor have we considered the relative strength of the odds. That's for the future when we consider more than one variable at a time.</p>
+<p>For the sake of completeness let's check the various outcomes where the Home odds were lower than the away odds.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">conditional</span><span class="p">(</span><span class="n">home</span><span class="p">,</span> <span class="n">given</span><span class="o">=</span><span class="n">lower_odds</span><span class="p">)</span> <span class="p">,</span> <span class="n">conditional</span><span class="p">(</span><span class="n">away</span><span class="p">,</span> <span class="n">given</span><span class="o">=</span><span class="n">lower_odds</span><span class="p">)</span> <span class="p">,</span> <span class="n">conditional</span><span class="p">(</span><span class="n">draw</span><span class="p">,</span> <span class="n">given</span><span class="o">=</span><span class="n">lower_odds</span><span class="p">)</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(0.5388652017054772, 0.21351262709084945, 0.24762217120367333)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There we can see it. The 21.3% of games end as Away wins where Home odds were lower while 24.7% end as draws. What about the situation where the Away odds are higher, i.e. the market expects an Away win.</p>
+<p>Similarly, when Away odds are higher.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">conditional</span><span class="p">(</span><span class="n">home</span><span class="p">,</span> <span class="n">given</span><span class="o">=</span><span class="n">higher_odds</span><span class="p">)</span> <span class="p">,</span> <span class="n">conditional</span><span class="p">(</span><span class="n">away</span><span class="p">,</span> <span class="n">given</span><span class="o">=</span><span class="n">higher_odds</span><span class="p">),</span> <span class="n">conditional</span><span class="p">(</span><span class="n">draw</span><span class="p">,</span> <span class="n">given</span><span class="o">=</span><span class="n">higher_odds</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(0.23088344469190794, 0.5233853006681515, 0.2457312546399406)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Amazing, almost identical figures. 52.3% accurate with 24.6% draws. That leaves 23% as the random element, being is very close to the figures we found in the case of Home win odds being lower. Again, as the sample size increases towards infinity, these two figures will tend to merge.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Out of curiosity what happens if we turn the probability prediction on its head. Given a Home win, what is the probability of getting Home odds lower?</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">conditional</span><span class="p">(</span><span class="n">lower_odds</span><span class="p">,</span> <span class="n">given</span><span class="o">=</span><span class="n">home</span><span class="p">),</span> <span class="n">conditional</span><span class="p">(</span><span class="n">lower_odds</span><span class="p">,</span> <span class="n">given</span><span class="o">=</span><span class="n">away</span><span class="p">),</span> <span class="n">conditional</span><span class="p">(</span><span class="n">lower_odds</span><span class="p">,</span> <span class="n">given</span><span class="o">=</span><span class="n">draw</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(0.835282155566853, 0.47902869757174393, 0.6888686131386861)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>That would have been ideal. Where we have a home win nearly 84% of games have lower starting odds for the Home win. Regrettably, we don't know the outcome before the game starts. Shame. This reflects the outcome that we saw in the Boxplot in the introduction above. It looked useful but has proven not to be so. Finally, for the sake of being complete let's compare the lower Away odds for various outcomes.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">conditional</span><span class="p">(</span><span class="n">higher_odds</span><span class="p">,</span> <span class="n">given</span><span class="o">=</span><span class="n">home</span><span class="p">),</span> <span class="n">conditional</span><span class="p">(</span><span class="n">higher_odds</span><span class="p">,</span> <span class="n">given</span><span class="o">=</span><span class="n">away</span><span class="p">),</span> <span class="n">conditional</span><span class="p">(</span><span class="n">higher_odds</span><span class="p">,</span> <span class="n">given</span><span class="o">=</span><span class="n">draw</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(0.15810879511947126, 0.5187637969094923, 0.30200729927007297)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion"> </a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We asked the question "what is the probability of a Home win when the Home win odds are less than Away odds or Draw odds". We were able to calculate the answer, though it did not help us much. The 53% probability of a Home win when Home win odds are the lowest is not enough to be the foundation for a winning strategy on its own. We would need further variables to improve the accuracy. Still, remember that figure as it may prove useful in the future.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Home wins have starting Home odds lower than Away odds 83% of the time. This is really useful information. However, as we don't know the outcome at the start, it does not help us at all.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In a way, this is a cautionary tale in the world of Data Science. There are often different ways to look at things. We need to check, double-check, and sanity check to prevent ourselves from coming to false or unhelpful conclusions. If you want to learn more about Bayes, then I suggest having a look at Allen Downeys book Think Bayes, which is available on Github. There are a few interesting exercises there to help give a different perspective and show how easy it is to make assumptions and/or come to the wrong conclusion.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Still, I have enjoyed playing with Bayes. So I think, that for Part 3 of this series we will have another Bayes study, this time on a different area.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><a class="u-url" href="/data-science-adventures/2021/12/21/All-at-odds-Part-2.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/data-science-adventures/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/data-science-adventures/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/data-science-adventures/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>From an absolute Zero towards Hero or perhaps Nero.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/alyferg" title="alyferg"><svg class="svg-icon grey"><use xlink:href="/data-science-adventures/assets/minima-social-icons.svg#github"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
