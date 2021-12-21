@@ -69,20 +69,9 @@
 
   
   
-      ,"page0": {
-          "title": "An Example Markdown Post",
-          "content": "Example Markdown Post . Basic setup . Jekyll requires blog post files to be named according to the following format: . YEAR-MONTH-DAY-filename.md . Where YEAR is a four-digit number, MONTH and DAY are both two-digit numbers, and filename is whatever file name you choose, to remind yourself what this post is about. .md is the file extension for markdown files. . The first line of the file should start with a single hash character, then a space, then your title. This is how you create a “level 1 heading” in markdown. Then you can create level 2, 3, etc headings as you wish but repeating the hash character, such as you see in the line ## File names above. . Basic formatting . You can use italics, bold, code font text, and create links. Here’s a footnote 1. Here’s a horizontal rule: . . Lists . Here’s a list: . item 1 | item 2 | . And a numbered list: . item 1 | item 2 | Boxes and stuff . This is a quotation . . You can include alert boxes …and… . . You can include info boxes Images . . Code . You can format text and code per usual . General preformatted text: . # Do a thing do_thing() . Python code and output: . # Prints &#39;2&#39; print(1+1) . 2 . Formatting text as shell commands: . echo &quot;hello world&quot; ./some_script.sh --option &quot;value&quot; wget https://example.com/cat_photo1.png . Formatting text as YAML: . key: value - another_key: &quot;another value&quot; . Tables . Column 1 Column 2 . A thing | Another thing | . Tweetcards . Altair 4.0 is released! https://t.co/PCyrIOTcvvTry it with: pip install -U altairThe full list of changes is at https://t.co/roXmzcsT58 ...read on for some highlights. pic.twitter.com/vWJ0ZveKbZ . &mdash; Jake VanderPlas (@jakevdp) December 11, 2019 Footnotes . This is the footnote. &#8617; . |",
-          "url": "https://alyferg.github.io/data-science-adventures/2020-01-14-test-markdown-post",
-          "relUrl": "/2020-01-14-test-markdown-post",
-          "date": ""
-      }
-      
-  
 
   
-
-  
-      ,"page2": {
+      ,"page1": {
           "title": "About Me",
           "content": "This website is powered by fastpages 1. . I have worked with data for all my life. In the early days of course, I didn’t recognise that it was data as such. As someone who was brought up pre-computer (personal, that is though business computers at the time were mainframes) this tended to be in paper format. Even now I can remember my teenage self pouring over maps for hours on end, studying the smallest detail on timetables, or wading through page after page of books filled with information. The latter tended to be by lists of things such as Kings, Countries, Animals, etc along with their important statistical information. These books were the forerunners of what are now coffee table tombes displayed to impress visitors. . As my career developed, then I found I was often in the situation of collecting, collating, and presenting data. Again, much of this tended to be in list form covering either specific locations or events. The huge volumes of data that are available today on even the minutest details were just unheard of at the time. . Computing did gradually become more and more important to businesses. As business processes developed around the use of data that increasingly tended to be more in spreadsheet format being involved was a natural progression for me. One of the talents that I did develop as things progressed was the ability to move data from one system to another. Due to a general level of incompatibility between systems in the early days, this orphan involved transposing data somewhere to extract the relevant fields. It was fun and always lead to a sense of achievement once you are able to get the data into the target format required. . Coming from an engineering background I often did get involved in analysing data. Though it was only when I got involved in the planning and business side of operations that I began to work with larger volumes of data. My career path did digress from the route that Data Science was taking and I gradually moved further and further away from it. It is only in the very recent past that I’ve begun to get reacquainted with the beauties of dealing with data. . I have to say that things are much easier now than they were in the early days. Well, perhaps that isn’t strictly true. It certainly is much easier to manipulate transpose and move data around than it ever was. Of course, the challenge now is that the volumes of data being collected for analysis are so much more than they ever were that data overload is a realistic possibility. It is also true that as Computing has developed, the power of machines has grown at an amazing rate. This has resulted in the fact that today the computing power available even in the home on a basic machine is as powerful as you could wish for while undertaking basic data analysis. . Therefore, I am really looking forward to my journey from an old data manipulator to a modern Data Science professional. . a blogging platform that natively supports Jupyter notebooks in addition to other formats. &#8617; . |",
           "url": "https://alyferg.github.io/data-science-adventures/about/",
@@ -114,7 +103,7 @@
   
 
   
-      ,"page11": {
+      ,"page10": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://alyferg.github.io/data-science-adventures/robots.txt",
